@@ -32,11 +32,11 @@ stages:
     - echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" | tee /etc/apt/sources.list.d/linux-surface.list
     #- mkdir -pm755 /etc/apt/keyrings
     #- wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
-    #- apt-get update
+    - apt-get update
   
   - name: add-kernel-packages
     type: apt
-    sources:
+    source:
       packages:
       - linux-image-surface
       - linux-headers-surface
@@ -45,7 +45,7 @@ stages:
   
   - name: add-qol-packages
     type: apt
-    sources:
+    source:
       packages:
       - gnome-tweaks
       #- winehq-stable
