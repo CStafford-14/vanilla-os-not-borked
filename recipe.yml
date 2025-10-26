@@ -36,7 +36,7 @@ stages:
   
   - name: add-kernel-packages
     type: apt
-    source:
+    sources:
       packages:
       - linux-image-surface
       - linux-headers-surface
@@ -45,7 +45,7 @@ stages:
   
   - name: add-qol-packages
     type: apt
-    source:
+    sources:
       packages:
       - gnome-tweaks
       #- winehq-stable
